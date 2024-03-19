@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TaxReceipt.API.Data;
-using TaxReceipt.API.Interfaces;
+using TaxReceipt.API.Interfaces.Repository;
+using TaxReceipt.API.Interfaces.Service;
 using TaxReceipt.API.Repository;
 using TaxReceipt.API.Service;
 
@@ -33,6 +34,10 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 var app = builder.Build();
 

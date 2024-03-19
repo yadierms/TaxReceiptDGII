@@ -51,12 +51,12 @@ const ModalWithTable = ({ isOpen, onClose, data }) => {
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Comprobantes de {rncCedula}</ModalHeader>
+        <ModalHeader>Comprobantes</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           {cargando ? (
             <div>...Cargando</div>
-          ) : comprobantes ? (
+          ) : comprobantes?.length > 0 ? (
             <>
               <Box overflowX="auto">
                 <Table variant="simple" overflowX="auto" width="100%">
@@ -73,12 +73,12 @@ const ModalWithTable = ({ isOpen, onClose, data }) => {
                       <Tr key={body.id}>
                         <Td whiteSpace="nowrap">{body.rncCedula}</Td>
                         <Td whiteSpace="nowrap">{body.ncf}</Td>
-                        <Td whiteSpace="nowrap">{body.monto}</Td>
-                        <Td whiteSpace="nowrap">{body.itbis18}</Td>
+                        <Td whiteSpace="nowrap">{body.monto.toFixed(2)}</Td>
+                        <Td whiteSpace="nowrap">{body.itbis18.toFixed(2)}</Td>
                       </Tr>
                     ))}
                   </Tbody>
-                </Table>{" "}
+                </Table>
               </Box>
               <TableCaption>
                 <Th whiteSpace="nowrap">Total ITBIS</Th>
@@ -87,12 +87,12 @@ const ModalWithTable = ({ isOpen, onClose, data }) => {
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
                 >
-                  {totalITBIS}
+                  {totalITBIS.toFixed(2)}
                 </Td>
               </TableCaption>
             </>
           ) : (
-            <div>No hay comprobante que mostrar .</div>
+            <div>No hay comprobantes que mostrar.</div>
           )}
         </ModalBody>
 

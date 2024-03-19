@@ -15,6 +15,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 // import SearchFilter from "../components/SearchFilter";
 import { useState } from "react";
 import TableComprobante from "../components/TableComprobante";
+import { MdOutlinePeople } from "react-icons/md";
 
 function ComprobantePage() {
   const data = useLoaderData();
@@ -29,6 +30,7 @@ function ComprobantePage() {
   const handleClick = () => {
     navigate("/contribuyente");
   };
+
   return (
     <Box boxShadow="xs" rounded="md">
       <VStack spacing="10px">
@@ -40,7 +42,12 @@ function ComprobantePage() {
               </Text>
             </Box>
             <Box marginLeft="auto" paddingTop="10px">
-              <Button onClick={handleClick} colorScheme="blue" size="sm">
+              <Button
+                leftIcon={<MdOutlinePeople />}
+                onClick={handleClick}
+                colorScheme="blue"
+                size="sm"
+              >
                 Revisar todos los contribuyentes
               </Button>
             </Box>

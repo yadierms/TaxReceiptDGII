@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxReceipt.API", "TaxReceip
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "taxreceipt.webapp", "TaxReceipt.WebApp\taxreceipt.webapp.esproj", "{06FB63A4-E04C-42DF-B0EC-C70A85966302}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxReceipt.Tests", "TaxReceipt.Tests\TaxReceipt.Tests.csproj", "{DCCBAF7F-DDC8-40B8-8517-04F2D38F5EF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{06FB63A4-E04C-42DF-B0EC-C70A85966302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06FB63A4-E04C-42DF-B0EC-C70A85966302}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06FB63A4-E04C-42DF-B0EC-C70A85966302}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DCCBAF7F-DDC8-40B8-8517-04F2D38F5EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCBAF7F-DDC8-40B8-8517-04F2D38F5EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCBAF7F-DDC8-40B8-8517-04F2D38F5EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCBAF7F-DDC8-40B8-8517-04F2D38F5EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

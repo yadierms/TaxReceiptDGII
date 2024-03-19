@@ -11,12 +11,12 @@ import {
   InputLeftElement,
   InputRightElement,
 } from "@chakra-ui/react";
-// import { useLoaderData } from "react-router-dom";
 import ApiService from "../services/ApiService";
 import { useLoaderData, useNavigate } from "react-router-dom";
-// import SearchFilter from "../components/SearchFilter";
 import { useState } from "react";
 import TableContribuyente from "../components/TableContribuyente";
+
+import { MdOutlineStickyNote2 } from "react-icons/md";
 
 function ContribuyentePage() {
   const data = useLoaderData();
@@ -31,6 +31,7 @@ function ContribuyentePage() {
   const handleClick = () => {
     navigate("/comprobante");
   };
+
   return (
     <Box boxShadow="xs" rounded="md">
       <VStack spacing="10px">
@@ -42,7 +43,12 @@ function ContribuyentePage() {
               </Text>
             </Box>
             <Box marginLeft="auto" paddingTop="10px">
-              <Button onClick={handleClick} colorScheme="blue" size="sm">
+              <Button
+                leftIcon={<MdOutlineStickyNote2 />}
+                onClick={handleClick}
+                colorScheme="blue"
+                size="sm"
+              >
                 Revisar todos los comprobantes
               </Button>
             </Box>
@@ -53,7 +59,7 @@ function ContribuyentePage() {
             <InputGroup>
               <InputLeftElement pointerEvents="none">🔍</InputLeftElement>
               <Input
-                placeholder="Buscar por nombre..."
+                placeholder="Buscar por rnc o cedula..."
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
               />

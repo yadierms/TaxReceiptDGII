@@ -1,6 +1,6 @@
 ﻿using TaxReceipt.API.Models;
 
-namespace TaxReceipt.API.Interfaces
+namespace TaxReceipt.API.Interfaces.Repository
 {
     public interface IComprobanteRepository
     {

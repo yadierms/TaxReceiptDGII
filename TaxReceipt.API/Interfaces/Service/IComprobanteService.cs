@@ -1,6 +1,6 @@
 ﻿using TaxReceipt.API.DTOs.Comprobante;
 
-namespace TaxReceipt.API.Interfaces
+namespace TaxReceipt.API.Interfaces.Service
 {
     public interface IComprobanteService
     {

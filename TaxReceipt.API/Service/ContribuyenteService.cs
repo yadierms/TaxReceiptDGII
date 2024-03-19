@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using TaxReceipt.API.DTOs.Contribuyente;
-using TaxReceipt.API.Interfaces;
+using TaxReceipt.API.Interfaces.Repository;
+using TaxReceipt.API.Interfaces.Service;
 
 namespace TaxReceipt.API.Service
 {

@@ -13,7 +13,8 @@
         {
             get
             {
-                return Monto * 0.18m;
+                decimal itbis = Monto * 0.18m;
+                return Math.Round(itbis, 2);
             }
         }
 
