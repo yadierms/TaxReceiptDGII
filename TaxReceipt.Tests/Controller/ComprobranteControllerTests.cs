@@ -43,8 +43,8 @@ namespace TaxReceipt.Tests.Controller
         public async Task ComprobanteController_GetAllContribuyentesByRnc_ReturnOk(long rncCedula)
         {
             // Arrange
-            var expectedComprobantes = new List<ComprobanteDTO>(); // Mocked list of Comprobantes
-            _comprobanteService.Setup(x => x.GetAllComprobantesByRnc(rncCedula)).ReturnsAsync(expectedComprobantes);
+            var comprobantes = new Mock<IEnumerable<ComprobanteDTO>>();
+            _comprobanteService.Setup(x => x.GetAllComprobantesByRnc(rncCedula)).ReturnsAsync(comprobantes.Object);
             var controller = new ComprobanteController(_comprobanteService.Object, _loggerMock);
 
             // Act
@@ -54,7 +54,7 @@ namespace TaxReceipt.Tests.Controller
             var resultAction = result.Result as OkObjectResult;
 
             resultAction.Should().BeOfType<OkObjectResult>()
-               .Which.Value.Should().BeEquivalentTo(expectedComprobantes);
+               .Which.Value.Should().BeEquivalentTo(comprobantes.Object);
         }
 
     }
